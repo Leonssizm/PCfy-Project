@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/employee-info.css">
+    <title>Employee-info</title>
+</head>
+
+<body>
+    <div class="previous-page-button">
+        <a href="./index.html">&#60;</a>
+    </div>
+    <div class="employee-info-form">
+        <p>თანამშრომლის ინფო</p>
+        <p>ლეპტოპის მახასიათებლები</p>
+    </div>
+    <div class="form-wrapper">
+        <div class="form">
+            <div class="name-surname-wrapper">
+                <div class="employee-name-input">
+                    <label>სახელი</label>
+                    <input type="text" name="firstname" placeholder="გრიშა" class="info-input" id="firstName">
+                    <div class="error">მინიმუმ 2 სიმბოლო, ქართული ასოები</div>
+                </div>
+                <div class="employee-surname-input">
+                    <label>გვარი</label>
+                    <input type="text" name="lastName" placeholder="ბაგრატიონი" class="info-input" id="lastName">
+                    <div class="error">მინიმუმ 2 სიმბოლო, ქართული ასოები</div>
+                </div>
+            </div>
+            <div class="teams-selection">
+                <select name="teams" id="teams" class="select-team-and-positions">
+                    <option disabled selected hidden>თიმი</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

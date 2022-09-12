@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  display: flex;
+  font-family: "Helvetica Neue";
+  flex-direction: column;
+  background-color: #f7f7f7;
+}
+@font-face {
+  font-family: Helvetica Neue;
+  src: url(../fonts/HelveticaNeue.ttc);
+}
+/* previous page button & Labels like "თანამშრომლების ინფო" */
+.previous-page-button {
+  margin: 53px 0 0 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 53px;
+  height: 53px;
+  border: 1px transparent;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+.previous-page-button a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 900;
+  color: #2e2e2e;
+}
+.employee-info-form {
+  display: flex;
+  justify-content: center;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 54px;
+}
+p {
+  margin: 0;
+}
+
+p:first-of-type {
+  margin: 0 66px 0 0;
+  display: inline;
+  border-bottom: 2px solid #000000;
+}
+
+/* employee form - name input, surname input, teams etc. */
+.form-wrapper {
+  margin-top: 27px;
+  display: flex;
+  justify-content: center;
+}
+.form {
+  padding: 96px 174px 199px 174px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border: 1px transparent;
+  width: 1226px;
+  background-color: #ffffff;
+  line-height: 2;
+}
+.employee-name-input,
+.employee-surname-input {
+  display: flex;
+  flex-direction: column;
+}
+.name-surname-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+}
+/* name & surname info inputs */
+input {
+  font-size: 21px;
+  padding: 16px;
+}
+.info-input {
+  box-sizing: border-box;
+  width: 408px;
+  height: 60px;
+  border: 1.8px solid #8ac0e2;
+  border-radius: 8px;
+}
+.error {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  color: #545454;
+}
+/* selections - Teams and Positions */
+.teams-selection {
+  margin-top: 52px;
+  display: flex;
+  justify-content: center;
+}
+.select-team-and-positions {
+  width: 950px;
+  height: 60px;
+  background: #ebebeb;
+  border-radius: 8px;
+  font-family: "Helvetica Neue";
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 16px;
+}
