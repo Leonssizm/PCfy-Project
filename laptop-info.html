@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/laptop-info.css">
+    <title>laptop-info</title>
+</head>
+
+<body>
+    <div class="previous-page-button">
+        <a href="./employee-info.html">&#60;</a>
+    </div>
+    <span class="employee-info-form">
+        <p>თანამშრომლის ინფო</p>
+        <p>ლეპტოპის მახასიათებლები</p>
+    </span>
+    <div class="form-wrapper">
+        <div class="form">
+            <div class="photo-input-wrapper">
+                <span class="photo-input-words">
+                    <h4>ჩააგდე ან ატვირთე <br>ლეპტოპის ფოტო</h4>
+                </span>
+                <input type="file" id="photo-file-upload" class="upload-button" multiple="true">
+                <label for="photo-file-upload">ატვირთე</label>
+            </div>
+            <div class="laptop-name-brand-wrapper">
+                <div class="laptop-name">
+                    <label>ლეპტოპის სახელი</label>
+                    <input type="text" name="laptop" placeholder="HP" class="laptop-name-input" id="laptop-name">
+                    <div class="error">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </div>
+                </div>
+                <div class="laptop-brand">
+                    <select name="brand" id="brand-selection" class="brand-selection">
+                        <option disabled selected hidden>ლეპტოპის ბრენდი</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div class="cpu-info-wrapper">
+                <div class="cpu-selection">
+                    <select name="cpu" id="cpu-selection" class="cpu-selection-data">
+                        <option disabled selected hidden>CPU</option>
+                    </select>
+                </div>
+                <div class="cpu-core">
+                    <label>CPU-ს ბირთვი</label>
+                    <input type="text" name="core" placeholder="14" class="cpu-core-input" id="cpu-core-name">
+                    <div class="error">მხოლოდ ციფრები</div>
+                </div>
+                <div class="cpu-stream">
+                    <label>CPU-ს ნაკადი</label>
+                    <input type="text" name="cpu-stream" placeholder="365" class="cpu-stream-input"
+                        id="cpu-stream-input">
+                    <div class="error">მხოლოდ ციფრები</div>
+                </div>
+            </div>
+            <div class="ram-memory-info-wrapper">
+                <div class="ram-info">
+                    <label>ლეპტოპის RAM (GB)</label>
+                    <input type="text" name="ram" placeholder="16" class="ram-info-input" id="ram-info-input">
+                    <div class="error">მხოლოდ ციფრები</div>
+                </div>
+                <div class="memory-type">
+                    <label>მეხსიერების ტიპი</label>
+                    <div class="radio-btn-wrapper">
+                        <input type="radio" name="radio-btn">RAM</input>
+                        <input type="radio" name="radio-btn">SSD</input>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="purchase-date-price-wrapper">
+                <div class="purchase-date-info">
+                    <label>შეძენის რიცხვი (არჩევითი)</label>
+                    <input type="date" name="purchase-date" class="purchase-date-input" id="purchase-info-input">
+                </div>
+                <div class="price-info">
+                    <label>ლეპტოპის ფასი</label>
+                    <input type="text" name="purchase-price" placeholder="0000" class="price-input"
+                        id="purchase-info-input">
+                    <div class="error">მხოლოდ ციფრები</div>
+                </div>
+            </div>
+            <label>ლეპტოპის მდგომარეობა</label>
+            <div class="radio-btn-wrapper">
+                <input type="radio" name="radio-btn">ახალი</input>
+                <input type="radio" name="radio-btn">მეორადი</input>
+            </div>
+            <div class="button-wrapper">
+                <button type="button" class="next-page-button">დამახსოვრება</button>
+                <button type="button" class="return-page">უკან</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wrapper">
+        <footer>
+            <img src="./assets/icons/rocketeer.svg">
+        </footer>
+    </div>
+</body>
+
+</html>

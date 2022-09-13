@@ -1,0 +1,289 @@
+body {
+  margin: 0;
+  display: flex;
+  font-family: "Helvetica Neue";
+  flex-direction: column;
+  background-color: #f7f7f7;
+}
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 100%;
+  background-color: #c7c7c7;
+  height: 1px;
+}
+@font-face {
+  font-family: Helvetica Neue;
+  src: url(../fonts/HelveticaNeue.ttc);
+}
+/* previous page button & Labels like "თანამშრომლების ინფო" */
+.previous-page-button {
+  margin: 53px 0 0 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 53px;
+  height: 53px;
+  border: 1px transparent;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+.previous-page-button a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 900;
+  color: #2e2e2e;
+}
+.employee-info-form {
+  display: flex;
+  justify-content: center;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 54px;
+}
+p {
+  margin: 0;
+}
+
+p:nth-of-type(2) {
+  margin: 0 0 0 66px;
+  display: inline;
+  border-bottom: 2px solid #000000;
+}
+
+/* laptop info form - picture, inputs etc */
+.form-wrapper {
+  margin-top: 27px;
+  display: flex;
+  justify-content: center;
+}
+.form {
+  padding: 44px 174px 44px 174px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border: 1px transparent;
+
+  background-color: #ffffff;
+  line-height: 2;
+}
+.photo-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #f7f7f7;
+  box-sizing: border-box;
+  border: 2px dashed #4386a9;
+  border-radius: 18px;
+  padding: 107px 341px 115px 341px;
+}
+
+input#photo-file-upload {
+  display: none;
+}
+input#photo-file-upload + label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  background: #62a1eb;
+  border-radius: 8px;
+  color: #ffffff;
+  width: 233px;
+  height: 60px;
+  cursor: pointer;
+}
+.photo-input-words {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 38px;
+  color: #4386a9;
+  text-align: center;
+}
+/* laptop name input & brand selection */
+input {
+  font-size: 21px;
+  padding: 16px;
+}
+label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+}
+.laptop-name-brand-wrapper {
+  margin: 50px 0px;
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+}
+.laptop-name {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.laptop-name-input {
+  width: 407px;
+  border: 1.8px solid #8ac0e2;
+  border-radius: 8px;
+}
+.error {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  color: #545454;
+}
+.brand-selection {
+  margin-top: 8px;
+  width: 408px;
+  height: 60px;
+
+  background: #ebebeb;
+  border-radius: 8px;
+  font-family: "Helvetica Neue";
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  -webkit-appearance: none;
+  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png")
+    #ddd no-repeat 98.5% !important;
+  padding: 16px;
+}
+/* CPU - central processing unit data. RAM and memory info */
+.cpu-info-wrapper {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cpu-core,
+.cpu-stream,
+.cpu-selection {
+  display: flex;
+  flex-direction: column;
+}
+.cpu-selection-data,
+.cpu-core-input,
+.cpu-stream-input {
+  width: 277px;
+}
+.cpu-core-input,
+.cpu-stream-input {
+  border: 1.8px solid #8ac0e2;
+  border-radius: 8px;
+}
+.cpu-selection-data {
+  margin-top: 8px;
+  background: #ebebeb;
+  border-radius: 8px;
+  font-family: "Helvetica Neue";
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  -webkit-appearance: none;
+  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png")
+    #ddd no-repeat 98.5% !important;
+  padding: 16px;
+}
+.ram-memory-info-wrapper,
+.purchase-date-price-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.ram-memory-info-wrapper {
+  margin-bottom: 50px;
+}
+.ram-info {
+  display: flex;
+  flex-direction: column;
+}
+.ram-info-input {
+  width: 407px;
+  border: 1.8px solid #8ac0e2;
+  border-radius: 8px;
+}
+.radio-btn-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 208px;
+}
+.memory-type {
+  display: flex;
+  flex-direction: column;
+  width: 408px;
+  align-items: flex-start;
+}
+input[name="radio-btn"] {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+}
+/* purchase date and price */
+.purchase-date-info,
+.price-info {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.price-input {
+  width: 381px;
+  border: 1.8px solid #8ac0e2;
+  border-radius: 8px;
+}
+.purchase-date-input {
+  width: 407px;
+  border: 1.8px solid #8ac0e2;
+  border-radius: 8px;
+}
+/* next & previous page */
+.button-wrapper {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.next-page-button {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px transparent;
+  background: #62a1eb;
+  border-radius: 8px;
+  width: 176px;
+  height: 60px;
+}
+.return-page {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #62a1eb;
+  border: 1px transparent;
+  background: transparent;
+}
+.footer-wrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}

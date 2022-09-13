@@ -53,23 +53,25 @@ p:first-of-type {
   justify-content: center;
 }
 .form {
-  padding: 96px 174px 199px 174px;
+  padding: 44px 174px 44px 174px;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   border: 1px transparent;
-  width: 1226px;
+
   background-color: #ffffff;
   line-height: 2;
 }
 .employee-name-input,
-.employee-surname-input {
+.employee-surname-input,
+.employee-phoneNum-input,
+.employee-email-input {
   display: flex;
   flex-direction: column;
 }
 .name-surname-wrapper {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 label {
   font-size: 18px;
@@ -101,8 +103,13 @@ input {
   display: flex;
   justify-content: center;
 }
+.positions-selection {
+  margin-top: 52px;
+  display: flex;
+  justify-content: center;
+}
 .select-team-and-positions {
-  width: 950px;
+  width: 878px;
   height: 60px;
   background: #ebebeb;
   border-radius: 8px;
@@ -111,4 +118,50 @@ input {
   font-size: 18px;
   line-height: 21px;
   padding: 16px;
+  -webkit-appearance: none;
+  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png")
+    #ddd no-repeat 98.5% !important;
+}
+/* email and phone number fields */
+
+.email-phoneNumber-wrapper {
+  margin-top: 51px;
+  display: flex;
+  flex-direction: column;
+}
+.email-phoneNumber-info-input {
+  width: 878px;
+  box-sizing: border-box;
+  height: 60px;
+  border: 1.8px solid #8ac0e2;
+  border-radius: 8px;
+}
+.employee-phoneNum-input {
+  margin-top: 28px;
+}
+.next-button-wrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.next-page-button {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px transparent;
+  background: #62a1eb;
+  border-radius: 8px;
+  width: 176px;
+  height: 60px;
+}
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
 }
