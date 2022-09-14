@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/employee-info.css">
+    <script src="./assets/scripts/employee-info.js" defer></script>
+    <script src="./assets/scripts/validations.js" defer></script>
     <title>Employee-info</title>
 </head>
 
@@ -20,22 +22,23 @@
     <div class="form-wrapper">
         <div class="form">
             <div class="name-surname-wrapper">
-                <div class="employee-name-input">
+                <div class="employee-name-input input-control">
                     <label>სახელი</label>
                     <input type="text" name="firstname" placeholder="გრიშა" class="info-input" id="firstName">
                     <div class="error">მინიმუმ 2 სიმბოლო, ქართული ასოები</div>
                 </div>
-                <div class="employee-surname-input">
+                <div class="employee-surname-input input-control">
                     <label>გვარი</label>
                     <input type="text" name="lastName" placeholder="ბაგრატიონი" class="info-input" id="lastName">
                     <div class="error">მინიმუმ 2 სიმბოლო, ქართული ასოები</div>
                 </div>
             </div>
             <div class="selections-wrapper">
-                <div class="teams-selection">
+                <div class="teams-selection input-control" id="team-selection">
                     <select name="teams" id="teams" class="select-team-and-positions">
                         <option disabled selected hidden>თიმი</option>
                     </select>
+
                 </div>
                 <div class="positions-selection">
                     <select name="positions" id="positions" class="select-team-and-positions">
@@ -44,13 +47,13 @@
                 </div>
             </div>
             <div class="email-phoneNumber-wrapper">
-                <div class="employee-email-input">
+                <div class="employee-email-input input-control">
                     <label>მეილი</label>
                     <input type="text" name="email" placeholder="grish666@redberry.ge"
                         class="email-phoneNumber-info-input" id="email">
                     <div class="error">უნდა მთავრდებოდეს redberry.ge-ით</div>
                 </div>
-                <div class="employee-phoneNum-input">
+                <div class="employee-phoneNum-input input-control">
                     <label>ტელეფონის ნომერი</label>
                     <input type="text" name="email" placeholder="+995 598 00 07 01" class="email-phoneNumber-info-input"
                         id="phoneNumber">
@@ -59,7 +62,7 @@
 
             </div>
             <div class="next-button-wrapper">
-                <button type="button" class="next-page-button">შემდეგი</button>
+                <button type="button" class="next-page-button" id="nextPage">შემდეგი</button>
             </div>
         </div>
 

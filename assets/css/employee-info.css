@@ -76,7 +76,6 @@ p:first-of-type {
 label {
   font-size: 18px;
   font-weight: bold;
-  color: #000000;
 }
 /* name & surname info inputs */
 input {
@@ -95,7 +94,6 @@ input {
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
-  color: #545454;
 }
 /* selections - Teams and Positions */
 .teams-selection {
@@ -164,4 +162,24 @@ input {
 .footer-wrapper {
   display: flex;
   justify-content: center;
+}
+.next-page-button:active {
+  box-shadow: 0 2px #6cb4ee;
+  transform: translateY(4px);
+  cursor: pointer;
+}
+
+/* stylings for validation */
+.input-control input:focus {
+  outline: 0;
+}
+.input-control.success input {
+  border-color: #09c352;
+}
+.input-control.error input {
+  border-color: #ff3860;
+}
+.input-control.error {
+  color: #ff3860;
+  font-size: 15px;
 }
