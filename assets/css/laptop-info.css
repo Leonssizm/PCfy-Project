@@ -118,7 +118,6 @@ input {
 label {
   font-size: 18px;
   font-weight: bold;
-  color: #000000;
 }
 .laptop-name-brand-wrapper {
   margin: 50px 0px;
@@ -142,7 +141,6 @@ label {
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
-  color: #545454;
 }
 .brand-selection {
   margin-top: 8px;
@@ -286,4 +284,19 @@ input[name="radio-btn"] {
   margin-top: 10px;
   display: flex;
   justify-content: center;
+}
+
+/* stylings for validation */
+.input-control input:focus {
+  outline: 0;
+}
+.input-control.success input {
+  border-color: #09c352;
+}
+.input-control.error input {
+  border-color: #ff3860;
+}
+.input-control.error {
+  color: #ff3860;
+  font-size: 15px;
 }

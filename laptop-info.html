@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/laptop-info.css">
+    <script src="./assets/scripts/laptop-info.js" defer></script>
+    <script src="./assets/scripts/validations.js" defer></script>
     <title>laptop-info</title>
 </head>
 
@@ -27,7 +29,7 @@
                 <label for="photo-file-upload">ატვირთე</label>
             </div>
             <div class="laptop-name-brand-wrapper">
-                <div class="laptop-name">
+                <div class="laptop-name input-control">
                     <label>ლეპტოპის სახელი</label>
                     <input type="text" name="laptop" placeholder="HP" class="laptop-name-input" id="laptop-name">
                     <div class="error">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </div>
@@ -90,7 +92,7 @@
                 <input type="radio" name="radio-btn">მეორადი</input>
             </div>
             <div class="button-wrapper">
-                <button type="button" class="next-page-button">დამახსოვრება</button>
+                <button type="button" class="next-page-button" id="submitButton">დამახსოვრება</button>
                 <button type="button" class="return-page">უკან</button>
             </div>
         </div>
