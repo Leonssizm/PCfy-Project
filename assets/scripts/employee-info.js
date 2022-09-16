@@ -94,18 +94,22 @@ function validateInputs() {
 
   if (teamSelection.value === "თიმი") {
     formIsValid = false;
+    positionSelection.style.marginTop = "0px";
     teamSelection.parentElement.style.borderRadius = "12px";
     teamSelection.parentElement.style.border = "3px solid #ff3860";
   } else {
+    positionSelection.style.marginTop = "0px";
     teamSelection.parentElement.style.borderRadius = "12px";
     teamSelection.parentElement.style.border = "3px solid #09c352";
   }
 
   if (positionSelection.value === "პოზიცია") {
     formIsValid = false;
+    positionSelection.style.marginTop = "0px";
     positionSelection.parentElement.style.borderRadius = "12px";
     positionSelection.parentElement.style.border = "3px solid #ff3860";
   } else {
+    positionSelection.style.marginTop = "0px";
     positionSelection.parentElement.style.borderRadius = "12px";
     positionSelection.parentElement.style.border = "3px solid #09c352";
   }

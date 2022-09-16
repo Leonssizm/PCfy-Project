@@ -47,12 +47,12 @@
                         <option disabled selected hidden>CPU</option>
                     </select>
                 </div>
-                <div class="cpu-core">
+                <div class="cpu-core input-control">
                     <label>CPU-ს ბირთვი</label>
-                    <input type="text" name="core" placeholder="14" class="cpu-core-input" id="cpu-core-name">
+                    <input type="text" name="core" placeholder="14" class="cpu-core-input" id="cpu-core-amount">
                     <div class="error">მხოლოდ ციფრები</div>
                 </div>
-                <div class="cpu-stream">
+                <div class="cpu-stream input-control">
                     <label>CPU-ს ნაკადი</label>
                     <input type="text" name="cpu-stream" placeholder="365" class="cpu-stream-input"
                         id="cpu-stream-input">
@@ -60,16 +60,16 @@
                 </div>
             </div>
             <div class="ram-memory-info-wrapper">
-                <div class="ram-info">
+                <div class="ram-info input-control">
                     <label>ლეპტოპის RAM (GB)</label>
                     <input type="text" name="ram" placeholder="16" class="ram-info-input" id="ram-info-input">
                     <div class="error">მხოლოდ ციფრები</div>
                 </div>
                 <div class="memory-type">
-                    <label>მეხსიერების ტიპი</label>
+                    <label id="memory-type-label">მეხსიერების ტიპი</label>
                     <div class="radio-btn-wrapper">
-                        <input type="radio" name="radio-btn">RAM</input>
-                        <input type="radio" name="radio-btn">SSD</input>
+                        <input type="radio" name="memory-type-radio-btn">HDD</input>
+                        <input type="radio" name="memory-type-radio-btn">SSD</input>
                     </div>
                 </div>
             </div>
@@ -79,17 +79,17 @@
                     <label>შეძენის რიცხვი (არჩევითი)</label>
                     <input type="date" name="purchase-date" class="purchase-date-input" id="purchase-info-input">
                 </div>
-                <div class="price-info">
+                <div class="price-info input-control">
                     <label>ლეპტოპის ფასი</label>
-                    <input type="text" name="purchase-price" placeholder="0000" class="price-input"
-                        id="purchase-info-input">
+                    <input type="text" name="purchase-price" placeholder="0000                      
+                                ₾" class="price-input" id="price-info-input">
                     <div class="error">მხოლოდ ციფრები</div>
                 </div>
             </div>
-            <label>ლეპტოპის მდგომარეობა</label>
+            <label id="laptop-condition-radioBtn-label">ლეპტოპის მდგომარეობა</label>
             <div class="radio-btn-wrapper">
-                <input type="radio" name="radio-btn">ახალი</input>
-                <input type="radio" name="radio-btn">მეორადი</input>
+                <input type="radio" name="condition-radio-btn">ახალი</input>
+                <input type="radio" name="condition-radio-btn">მეორადი</input>
             </div>
             <div class="button-wrapper">
                 <button type="button" class="next-page-button" id="submitButton">დამახსოვრება</button>
@@ -101,6 +101,16 @@
         <footer>
             <img src="./assets/icons/rocketeer.svg">
         </footer>
+    </div>
+
+    <!-- under construction -->
+    <div class="popup-wrapper">
+        <div class="popup">
+            <img src="./assets/images/success.png" alt="success">
+            <h1>ჩანაწერი დამატებულია</h1>
+            <button type="button">სიაში გადაყვანა</button>
+            <button type="button">მთავარი</button>
+        </div>
     </div>
 </body>
 
