@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/css/laptop-info.css">
     <script src="./assets/scripts/laptop-info.js" defer></script>
     <script src="./assets/scripts/validations.js" defer></script>
+
     <title>laptop-info</title>
 </head>
 
@@ -21,13 +22,16 @@
     </span>
     <div class="form-wrapper">
         <div class="form">
-            <div class="photo-input-wrapper">
-                <span class="photo-input-words">
-                    <h4>ჩააგდე ან ატვირთე <br>ლეპტოპის ფოტო</h4>
+
+            <div class="drop-zone">
+                <span class="drop-zone-prompt">ჩააგდე ან ატვირთე <br> ლეპტოპის ფოტო <br>
+                    <hr><span class="upload-pic-button">
+                        ატვირთე </span>
                 </span>
-                <input type="file" id="photo-file-upload" class="upload-button" multiple="true">
-                <label for="photo-file-upload">ატვირთე</label>
+
+                <input type="file" name="pictureFile" class="drop-zone-input" id="image-upload-input">
             </div>
+
             <div class="laptop-name-brand-wrapper">
                 <div class="laptop-name input-control">
                     <label>ლეპტოპის სახელი</label>
@@ -112,6 +116,8 @@
             <button type="button">მთავარი</button>
         </div>
     </div>
+
+    <script src="./assets/scripts/image-upload.js"></script>
 </body>
 
 </html>

@@ -155,6 +155,8 @@ function validateInputs() {
       });
     });
 
+  // console.log(pictureInput.value === ""); HERE IS YOU VALIDATION CONDITION BI
+
   return formIsValid;
 }
 
