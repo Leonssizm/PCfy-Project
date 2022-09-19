@@ -181,7 +181,7 @@ function validateInputs() {
 
 //preparing data from this page and from previous page to send
 
-document.getElementById("submitButton").addEventListener("click", () => {
+document.getElementById("submitButton").addEventListener("click", (e) => {
   let chosenHardDriveType;
   let laptopState;
   let cpuSelectionValueForLocalstorage = cpuSelection.value.split(",").join(" ");
@@ -190,7 +190,8 @@ document.getElementById("submitButton").addEventListener("click", () => {
   let laptopImg = localStorage.getItem("laptop-image");
   let laptopInfo = JSON.parse(localStorage.getItem("laptop-info"));
 
-  console.log(typeof laptopImg);
+  const blob = new Blob([JSON.stringify(laptopImg, null, 2)], { type: "image/jpeg" });
+  let image = document.getElementById("image-upload-input");
 
   if (validateInputs()) {
     setTimeout(() => {
@@ -212,49 +213,46 @@ document.getElementById("submitButton").addEventListener("click", () => {
           laptop_ram: ramElement.value,
           laptop_hard_drive_type: chosenHardDriveType,
           laptop_state: laptopState,
-          ...(purchaseDate.value && {
-            laptop_purchase_date: purchaseDate.value,
-          }),
+          laptop_purchase_date: purchaseDate.value,
           laptop_price: laptopPriceElement.value,
         })
       );
     }, 1000);
 
-    // "SENDING INFO TO SERVER LOGIC WILL BE HERE"
+    // "SENDING INFO TO SERVER LOGIC"
 
+    let formData = new FormData();
+    formData.append("name", emplyoyeeInfo.name);
+    formData.append("surname", emplyoyeeInfo.surname);
+    formData.append("team_id", emplyoyeeInfo.team_id);
+    formData.append("position_id", emplyoyeeInfo.position_id);
+    formData.append("phone_number", emplyoyeeInfo.phone_number);
+    formData.append("email", emplyoyeeInfo.email);
+    formData.append("token", emplyoyeeInfo.token);
+    formData.append("laptop_name", laptopInfo.laptop_name);
+    formData.append("laptop_image", image.files[0]);
+    formData.append("laptop_brand_id", laptopInfo.laptop_brand_id);
+    formData.append("laptop_cpu", laptopInfo.laptop_cpu);
+    formData.append("laptop_cpu_cores", laptopInfo.laptop_cpu_cores);
+    formData.append("laptop_cpu_threads", laptopInfo.laptop_cpu_threads);
+    formData.append("laptop_ram", laptopInfo.laptop_ram);
+    formData.append("laptop_hard_drive_type", laptopInfo.laptop_hard_drive_type);
+    formData.append("laptop_state", laptopInfo.laptop_state);
+    formData.append("laptop_purchase_date", laptopInfo.laptop_purchase_date);
+    formData.append("laptop_price", laptopInfo.laptop_price);
     setTimeout(() => {
       fetch("https://pcfy.redberryinternship.ge/api/laptop/create", {
         method: "POST",
-
-        body: JSON.stringify({
-          name: emplyoyeeInfo.name,
-          surname: emplyoyeeInfo.surname,
-          team_id: emplyoyeeInfo.team_id,
-          position_id: emplyoyeeInfo.position_id,
-          phone_number: emplyoyeeInfo.phone_number,
-          email: emplyoyeeInfo.email,
-          token: emplyoyeeInfo.token,
-          laptop_name: laptopInfo.laptop_name,
-          laptop_image: laptopImg,
-          laptop_brand_id: laptopInfo.laptop_brand_id,
-          laptop_cpu: laptopInfo.laptop_cpu,
-          laptop_cpu_cores: laptopInfo.laptop_cpu_cores,
-          laptop_cpu_threads: laptopInfo.laptop_cpu_threads,
-          laptop_ram: laptopInfo.laptop_ram,
-          laptop_hard_drive_type: laptopInfo.laptop_hard_drive_type,
-          laptop_state: laptopInfo.laptop_state,
-          laptop_purchase_date: laptopInfo.laptop_purchase_date,
-          laptop_price: laptopInfo.laptop_price,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
+        body: formData,
       })
-        .then((data) => {
-          console.log(data.json());
+        .then((response) => {
+          console.log(response.json());
+          if (response.status <= 299) {
+            document.getElementById("popup-wrapper").classList.add("display");
+          }
         })
         .catch((error) => {
-          console.log(error);
+          alert(error);
         });
     }, 3000);
   }

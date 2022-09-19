@@ -56,7 +56,9 @@ p:nth-of-type(2) {
 .page {
   display: none;
 }
-
+.back-btn-responsive {
+  display: none;
+}
 /* laptop info form - picture, inputs etc */
 .form-wrapper {
   margin-top: 27px;
@@ -329,7 +331,71 @@ input[name="radio-btn"] {
 /* successfully submitted popup */
 
 .popup-wrapper {
+  background-color: #09c352;
   display: none;
+}
+.popup {
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  width: 800px;
+  height: 500px;
+}
+.popup-board {
+  display: flex;
+  justify-content: center;
+}
+.popup-header {
+  display: flex;
+  justify-content: center;
+}
+.popup-png {
+  display: flex;
+  justify-content: center;
+}
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+.popup-btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.popup-next-button {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px transparent;
+  background: #62a1eb;
+  border-radius: 8px;
+  width: 297px;
+  height: 60px;
+}
+.popup-mainList-button {
+  margin-top: 20px;
+  text-decoration: none;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #62a1eb;
+  border: 1px transparent;
+  background: transparent;
 }
 
 /* responsive design for iphone 12 pro */

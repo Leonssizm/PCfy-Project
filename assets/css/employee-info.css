@@ -48,7 +48,9 @@ p:first-of-type {
 .page {
   display: none;
 }
-
+.back-btn-responsive {
+  display: none;
+}
 /* employee form - name input, surname input, teams etc. */
 .form-wrapper {
   margin-top: 27px;
