@@ -45,3 +45,25 @@ body {
   box-shadow: 0 2px #6cb4ee;
   transform: translateY(4px);
 }
+
+/* responsive design for Iphone 12 Pro */
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .developer-img {
+    content: url(../images/landing-for-iphone.png);
+  }
+  .add-log-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 358px;
+    margin-top: 122px;
+    border: 1px transparent;
+    border-radius: 8px;
+    background-color: #62a1eb;
+  }
+  .log-list-button-wrapper {
+    width: 358px;
+    margin-top: 16px;
+    margin-bottom: 35px;
+  }
+}

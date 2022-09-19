@@ -45,6 +45,9 @@ p:first-of-type {
   display: inline;
   border-bottom: 2px solid #000000;
 }
+.page {
+  display: none;
+}
 
 /* employee form - name input, surname input, teams etc. */
 .form-wrapper {
@@ -182,4 +185,66 @@ input {
 .input-control.error {
   color: #ff3860;
   font-size: 15px;
+}
+
+/* responsive design for Iphone 12 Pro */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .form-wrapper {
+    overflow: hidden;
+  }
+  hr {
+    width: 370px;
+    height: 10px;
+    background-color: #f1f1f1;
+  }
+  p:nth-of-type(2) {
+    display: none;
+  }
+  p:first-of-type {
+    margin-right: 50px;
+    border-bottom: none;
+  }
+  .previous-page-button {
+    display: flex;
+    width: 0;
+    margin: 0;
+  }
+  .info-input {
+    width: 358px;
+  }
+  .name-surname-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .select-team-and-positions {
+    width: 358px;
+  }
+  .email-phoneNumber-info-input {
+    width: 358px;
+  }
+  .footer-wrapper {
+    display: none;
+  }
+  .back-btn {
+    display: none;
+  }
+  .back-btn-responsive {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 900;
+    color: #2e2e2e;
+    float: left;
+  }
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #898989;
+  }
+  .employee-info-form {
+    display: flex;
+    justify-content: space-around;
+  }
 }

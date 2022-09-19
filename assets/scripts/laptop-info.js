@@ -47,6 +47,27 @@ function validateInputs() {
   const laptopPriceElementValue = laptopPriceElement.value.trim();
   const laptopConditionLabel = document.getElementById("laptop-condition-radioBtn-label");
 
+  const imageInputElement = document.getElementById("image-upload-input");
+  const laptop_img_prompt = document.getElementById("drop-zone-words");
+  const img_warning_sign_element = document.getElementById("img-warning-sign");
+  const drop_zone_element = document.querySelector(".drop-zone");
+
+  //picture upload validation
+
+  if (imageInputElement.value === "") {
+    formIsValid = false;
+    drop_zone_element.style.backgroundColor = "#FFEAEA";
+    drop_zone_element.style.border = "2px dashed #E52F2F";
+    img_warning_sign_element.innerHTML = `<svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14.1474 1.79208L21.5538 14.1933C22.6182 15.9744 22.0954 18.3178 20.3855 19.4267C19.8117 19.8002 19.1427 19.9993 18.4591 20H3.64517C1.63248 20 0 18.3 0 16.2011C0 15.4911 0.191211 14.7966 0.550423 14.1933L7.95792 1.79208C9.02118 0.0109538 11.2693 -0.534606 12.9791 0.574292C13.4522 0.880961 13.8523 1.29763 14.1474 1.79208ZM11.0527 15.5555C11.3458 15.5555 11.6269 15.4385 11.8342 15.2301C12.0415 15.0217 12.1579 14.7391 12.1579 14.4444C12.1579 14.1497 12.0415 13.8671 11.8342 13.6587C11.6269 13.4503 11.3458 13.3333 11.0527 13.3333C10.7595 13.3333 10.4784 13.4503 10.2711 13.6587C10.0638 13.8671 9.9474 14.1497 9.9474 14.4444C9.9474 14.7391 10.0638 15.0217 10.2711 15.2301C10.4784 15.4385 10.7595 15.5555 11.0527 15.5555V15.5555ZM11.0527 5.55544C10.7595 5.55544 10.4784 5.67251 10.2711 5.88088C10.0638 6.08926 9.9474 6.37187 9.9474 6.66656V11.111C9.9474 11.4057 10.0638 11.6883 10.2711 11.8967C10.4784 12.1051 10.7595 12.2222 11.0527 12.2222C11.3458 12.2222 11.6269 12.1051 11.8342 11.8967C12.0415 11.6883 12.1579 11.4057 12.1579 11.111V6.66656C12.1579 6.37187 12.0415 6.08926 11.8342 5.88088C11.6269 5.67251 11.3458 5.55544 11.0527 5.55544Z" fill="#C9CB52"/>
+    </svg>`;
+    laptop_img_prompt.style.color = "#E52F2F";
+    laptop_img_prompt.innerHTML = "ჩააგდე ან ატვირთე <br> ლეპტოპის ფოტო <br>";
+  } else {
+    drop_zone_element.style.backgroundColor = "#F7F7F7";
+    drop_zone_element.style.border = "2px dashed #09c352";
+  }
+
   //   laptop name and brand validation
 
   if (!isFilled(laptopNameElementValue)) {
@@ -155,8 +176,6 @@ function validateInputs() {
       });
     });
 
-  // console.log(pictureInput.value === ""); HERE IS YOU VALIDATION CONDITION BI
-
   return formIsValid;
 }
 
@@ -166,6 +185,12 @@ document.getElementById("submitButton").addEventListener("click", () => {
   let chosenHardDriveType;
   let laptopState;
   let cpuSelectionValueForLocalstorage = cpuSelection.value.split(",").join(" ");
+
+  let emplyoyeeInfo = JSON.parse(localStorage.getItem("employee-info"));
+  let laptopImg = localStorage.getItem("laptop-image");
+  let laptopInfo = JSON.parse(localStorage.getItem("laptop-info"));
+
+  console.log(typeof laptopImg);
 
   if (validateInputs()) {
     setTimeout(() => {
@@ -179,9 +204,10 @@ document.getElementById("submitButton").addEventListener("click", () => {
         "laptop-info",
         JSON.stringify({
           laptop_name: laptopNameElement.value,
-          laptop_image: "UNDER CONSTRUCTION",
+          laptop_image: laptopImg,
           laptop_brand_id: laptopBrandIdForLocalstorage,
           laptop_cpu: cpuSelectionValueForLocalstorage,
+          laptop_cpu_cores: cpuCoreElement.value,
           laptop_cpu_threads: cpuStreamElement.value,
           laptop_ram: ramElement.value,
           laptop_hard_drive_type: chosenHardDriveType,
@@ -193,14 +219,13 @@ document.getElementById("submitButton").addEventListener("click", () => {
         })
       );
     }, 1000);
-    let emplyoyeeInfo = JSON.parse(localStorage.getItem("employee-info"));
-    let laptopInfo = JSON.parse(localStorage.getItem("laptop-info"));
 
     // "SENDING INFO TO SERVER LOGIC WILL BE HERE"
 
     setTimeout(() => {
       fetch("https://pcfy.redberryinternship.ge/api/laptop/create", {
         method: "POST",
+
         body: JSON.stringify({
           name: emplyoyeeInfo.name,
           surname: emplyoyeeInfo.surname,
@@ -210,8 +235,27 @@ document.getElementById("submitButton").addEventListener("click", () => {
           email: emplyoyeeInfo.email,
           token: emplyoyeeInfo.token,
           laptop_name: laptopInfo.laptop_name,
+          laptop_image: laptopImg,
+          laptop_brand_id: laptopInfo.laptop_brand_id,
+          laptop_cpu: laptopInfo.laptop_cpu,
+          laptop_cpu_cores: laptopInfo.laptop_cpu_cores,
+          laptop_cpu_threads: laptopInfo.laptop_cpu_threads,
+          laptop_ram: laptopInfo.laptop_ram,
+          laptop_hard_drive_type: laptopInfo.laptop_hard_drive_type,
+          laptop_state: laptopInfo.laptop_state,
+          laptop_purchase_date: laptopInfo.laptop_purchase_date,
+          laptop_price: laptopInfo.laptop_price,
         }),
-      });
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((data) => {
+          console.log(data.json());
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }, 3000);
   }
 });

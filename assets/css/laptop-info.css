@@ -53,6 +53,9 @@ p:nth-of-type(2) {
   display: inline;
   border-bottom: 2px solid #000000;
 }
+.page {
+  display: none;
+}
 
 /* laptop info form - picture, inputs etc */
 .form-wrapper {
@@ -327,4 +330,115 @@ input[name="radio-btn"] {
 
 .popup-wrapper {
   display: none;
+}
+
+/* responsive design for iphone 12 pro */
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .form-wrapper {
+    overflow: hidden;
+  }
+  hr {
+    width: 370px;
+    height: 10px;
+    background-color: #f1f1f1;
+  }
+  p:first-of-type {
+    display: none;
+  }
+  p:nth-of-type(2) {
+    margin-right: 35px;
+    border-bottom: none;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .drop-zone {
+    width: 258px;
+    height: 244px;
+  }
+  .laptop-name-brand-wrapper {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .laptop-name-input {
+    width: 330px;
+  }
+  .brand-selection {
+    width: 365px;
+  }
+  .cpu-info-wrapper {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .cpu-selection-data {
+    width: 365px;
+  }
+  .cpu-core-input,
+  .cpu-stream-input {
+    width: 330px;
+  }
+  .ram-memory-info-wrapper,
+  .purchase-date-price-wrapper {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  .ram-info-input,
+  .purchase-date-input,
+  .price-input {
+    margin: 0;
+    width: 330px;
+  }
+  .memory-type {
+    margin-left: 50px;
+  }
+  .laptop-condition-wrapper {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 408px;
+    align-items: flex-start;
+  }
+  .footer-wrapper {
+    display: none;
+  }
+  .previous-page-button {
+    display: flex;
+    width: 0;
+    margin: 0;
+  }
+  .next-page-button {
+    margin-left: 60px;
+  }
+  .return-page {
+    margin-right: 50px;
+  }
+  .back-btn {
+    display: none;
+  }
+  .back-btn-responsive {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 900;
+    color: #2e2e2e;
+    float: left;
+  }
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #898989;
+  }
+  .employee-info-form {
+    display: flex;
+    justify-content: space-around;
+  }
 }

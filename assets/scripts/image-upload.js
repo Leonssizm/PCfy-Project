@@ -72,5 +72,9 @@ pictureInput.addEventListener("change", function () {
   reader.addEventListener("load", () => {
     localStorage.setItem("laptop-image", reader.result);
   });
+
   reader.readAsDataURL(this.files[0]);
 });
+
+const laptopInfoForm = document.getElementById("laptop-info-form");
+const laptopImg = document.getElementById("image-upload-input");
