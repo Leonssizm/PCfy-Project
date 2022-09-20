@@ -2,6 +2,19 @@
   font-family: Helvetica Neue;
   src: url(../fonts/HelveticaNeue.ttc);
 }
+hr {
+  border: 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: #a5a5a5;
+  height: 1px;
+}
+.img-personal-info-wrapper img {
+  height: 350px;
+}
 
 .body {
   margin: 0;
@@ -93,6 +106,7 @@
 .form-wrapper {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 .form {
   display: flex;
@@ -176,15 +190,4 @@
 }
 .purchase-date-wrapper {
   display: flex;
-}
-
-hr {
-  border: 0;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  clear: both;
-  display: block;
-  width: 96%;
-  background-color: #a5a5a5;
-  height: 1px;
 }
