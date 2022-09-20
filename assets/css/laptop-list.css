@@ -41,7 +41,7 @@ hr {
   font-weight: 900;
   color: #2e2e2e;
 }
-.heading-container {
+.list-header-container {
   display: flex;
   justify-content: center;
   font-family: "Helvetica Neue";
@@ -49,6 +49,9 @@ hr {
   font-size: 20px;
   color: #000000;
   font-weight: 700;
+}
+.back-btn-responsive {
+  display: none;
 }
 #laptop-card-template-wrapper {
   display: flex;
@@ -190,4 +193,30 @@ hr {
 }
 .purchase-date-wrapper {
   display: flex;
+}
+
+/* Responsive design */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  #laptop-card-template-wrapper {
+    overflow: hidden;
+  }
+  .previous-page-button {
+    display: none;
+  }
+  .list-header-container {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 70px;
+  }
+  .back-btn-responsive {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 900;
+    color: #2e2e2e;
+    float: left;
+    display: flex;
+    align-items: center;
+  }
 }
