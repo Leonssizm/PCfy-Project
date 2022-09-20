@@ -50,7 +50,7 @@ document.getElementById("nextPage").addEventListener("click", () => {
           position_id: positionIdForLocalStorage,
           phone_number: phoneNumberElement.value,
           email: emailElement.value,
-          token: "97d91ceeac715289ad07f7f2e3f16e23",
+          token: "1577d148fddc21da5ab7053a98fe95f5",
         })
       );
       window.location.href = "./laptop-info.html";

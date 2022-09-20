@@ -1,0 +1,190 @@
+@font-face {
+  font-family: Helvetica Neue;
+  src: url(../fonts/HelveticaNeue.ttc);
+}
+
+.body {
+  margin: 0;
+  display: flex;
+  font-family: "Helvetica Neue";
+  flex-direction: column;
+  background-color: #f7f7f7;
+}
+
+.previous-page-button {
+  margin: 53px 0 0 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 53px;
+  height: 53px;
+  border: 1px transparent;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+.previous-page-button a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 900;
+  color: #2e2e2e;
+}
+.heading-container {
+  display: flex;
+  justify-content: center;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-size: 20px;
+  color: #000000;
+  font-weight: 700;
+}
+#laptop-card-template-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 563px;
+  height: 205px;
+  background-color: #eafaff;
+  border: 1px solid #aed1ea;
+  border-radius: 20px;
+  margin: 40px;
+}
+.laptop-image {
+  height: 178px;
+  width: 266px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.laptop-info {
+  display: flex;
+  flex-direction: column;
+}
+.laptop-info h2 {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  color: #2e2e2e;
+  line-height: 21px;
+}
+.laptop-info p {
+  margin-top: 0;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #2e2e2e;
+  line-height: 21px;
+}
+.laptop-info a {
+  margin-top: 20px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+/* individual Laptop HTML page stylings */
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.img-personal-info-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+.personal-info-wrapper {
+  display: flex;
+}
+.personal-info-labels,
+.price-condition,
+.laptop-name-ram,
+.cpu-name,
+.purchase-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 27px;
+  color: #2e2e2e;
+}
+.personal-info-labels p,
+.cpu-name p,
+.cpu-values p,
+.personal-info-values p,
+.laptop-name-ram-values p,
+.laptop-name-ram p,
+.price-condition p,
+.price-condition-values p,
+.purchase-date p,
+.purchase-date-value p {
+  margin: 13px;
+}
+
+.personal-info-values,
+.laptop-name-ram-values,
+.cpu-values,
+.price-condition-values,
+.purchase-date-value {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+  color: #797979;
+}
+.laptop-info-cpu {
+  display: flex;
+  justify-content: space-evenly;
+}
+.laptop-name-ram-wrapper {
+  display: flex;
+}
+.cpu-info-wrapper {
+  display: flex;
+}
+
+.laptop-condition-fee {
+  display: flex;
+  justify-content: space-evenly;
+}
+.laptop-price-wrapper {
+  display: flex;
+}
+.purchase-date-wrapper {
+  display: flex;
+}
+
+hr {
+  border: 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: #a5a5a5;
+  height: 1px;
+}

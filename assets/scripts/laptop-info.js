@@ -1,6 +1,6 @@
 const laptopBrand = document.getElementById("brand-selection");
 const laptopNameElement = document.getElementById("laptop-name");
-const laptopNameRegex = /^[a-zA-Z0-9!@#$%^&*()_+=]+$/;
+const laptopNameRegex = /^[a-zA-Z 0-9!@#$%^&*()_+=]+$/;
 const cpuSelection = document.getElementById("cpu-selection");
 const cpuCoreElement = document.getElementById("cpu-core-amount");
 const cpuStreamElement = document.getElementById("cpu-stream-input");
