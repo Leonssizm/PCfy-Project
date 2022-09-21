@@ -9,6 +9,7 @@ fetch(
     data = Object.entries(data)[0][1];
     let laptopData = data.laptop;
     let userData = data.user;
+    console.log(laptopData.purchase_date);
     fetch("https://pcfy.redberryinternship.ge/api/teams")
       .then((response) => response.json())
       .then((teamsData) => {
@@ -16,7 +17,7 @@ fetch(
         let teamPosition;
         let chosenBrand;
         let laptopConditionInGeorgian;
-        let purchaseData;
+
         teamsData = Object.entries(teamsData)[0][1];
 
         teamsData.forEach((team) => {
@@ -49,12 +50,6 @@ fetch(
                   laptopConditionInGeorgian = "მეორადი";
                 } else {
                   laptopConditionInGeorgian = "ახალი";
-                }
-
-                if (laptopData.laptop_purchase_date === null) {
-                  purchaseData = " ";
-                } else {
-                  purchaseData = laptopData.laptop_purchase_date;
                 }
 
                 laptopForm.innerHTML += `
@@ -137,7 +132,7 @@ fetch(
                 <p><b>შეძენის თარიღი:</b></p>
             </div>
             <div class="purchase-date-value">
-                <p>${purchaseData}</p>
+                <p>${laptopData.purchase_date}</p>
             </div>
 
         </div>
