@@ -2,7 +2,7 @@ const laptopForm = document.getElementById("individual-laptop-form");
 let params = new URLSearchParams(document.location.search);
 let laptopId = params.get("laptopId");
 fetch(
-  `https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=1577d148fddc21da5ab7053a98fe95f5`
+  `https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=0289823908804c371c3805e1d5638baa`
 )
   .then((response) => response.json())
   .then((data) => {

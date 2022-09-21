@@ -35,6 +35,33 @@ fetch("https://pcfy.redberryinternship.ge/api/cpus")
     });
   });
 
+// when page is refreshed, the values remain;
+
+window.onbeforeunload = function () {
+  sessionStorage.setItem("laptopName", laptopNameElement.value);
+  sessionStorage.setItem("cpuCore", cpuCoreElement.value);
+  sessionStorage.setItem("cpuStream", cpuStreamElement.value);
+  sessionStorage.setItem("ram", ramElement.value);
+  sessionStorage.setItem("price", laptopPriceElement.value);
+  sessionStorage.setItem("purchase_date", purchaseDate.value);
+};
+
+window.onload = function () {
+  let laptopName = sessionStorage.getItem("laptopName");
+  let cpuCore = sessionStorage.getItem("cpuCore");
+  let cpuStream = sessionStorage.getItem("cpuStream");
+  let ram = sessionStorage.getItem("ram");
+  let price = sessionStorage.getItem("price");
+  let purchase_date = sessionStorage.getItem("purchase_date");
+
+  laptopNameElement.value = laptopName;
+  cpuCoreElement.value = cpuCore;
+  cpuStreamElement.value = cpuStream;
+  ramElement.value = ram;
+  laptopPriceElement.value = price;
+  purchaseDate.value = purchase_date;
+};
+
 function validateInputs() {
   let formIsValid = true;
   const laptopNameElementValue = laptopNameElement.value.trim();
@@ -249,6 +276,7 @@ document.getElementById("submitButton").addEventListener("click", (e) => {
           if (response.status <= 299) {
             document.getElementById("popup-wrapper").classList.add("display");
             localStorage.clear();
+            sessionStorage.clear();
           }
         })
         .catch((error) => {

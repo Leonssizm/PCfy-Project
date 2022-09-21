@@ -3,7 +3,7 @@ let laptopImage = document.getElementById("laptopImg");
 let userInfo = document.getElementById("userName");
 let laptopName = document.getElementById("laptopModel");
 
-fetch("https://pcfy.redberryinternship.ge/api/laptops?token=1577d148fddc21da5ab7053a98fe95f5")
+fetch("https://pcfy.redberryinternship.ge/api/laptops?token=0289823908804c371c3805e1d5638baa")
   .then((response) => response.json())
   .then((laptopData) => {
     laptopData = Object.entries(laptopData)[0][1];

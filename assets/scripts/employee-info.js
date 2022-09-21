@@ -50,7 +50,7 @@ document.getElementById("nextPage").addEventListener("click", () => {
           position_id: positionIdForLocalStorage,
           phone_number: phoneNumberElement.value,
           email: emailElement.value,
-          token: "1577d148fddc21da5ab7053a98fe95f5",
+          token: "0289823908804c371c3805e1d5638baa",
         })
       );
       window.location.href = "./laptop-info.html";
@@ -155,3 +155,25 @@ function validateInputs() {
 
   return formIsValid;
 }
+
+// when page is refreshed, the values remain;
+
+window.onbeforeunload = function () {
+  sessionStorage.setItem("name", firstNameElement.value);
+  sessionStorage.setItem("surname", lastNameElement.value);
+  sessionStorage.setItem("teamSelection", teamSelection.value);
+  sessionStorage.setItem("email", emailElement.value);
+  sessionStorage.setItem("phoneNumber", phoneNumberElement.value);
+};
+
+window.onload = function () {
+  let name = sessionStorage.getItem("name");
+  let surname = sessionStorage.getItem("surname");
+  let email = sessionStorage.getItem("email");
+  let phoneNumber = sessionStorage.getItem("phoneNumber");
+
+  firstNameElement.value = name;
+  lastNameElement.value = surname;
+  emailElement.value = email;
+  phoneNumberElement.value = phoneNumber;
+};
