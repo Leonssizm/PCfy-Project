@@ -219,4 +219,71 @@ hr {
     display: flex;
     align-items: center;
   }
+  .card {
+    width: 358px;
+    height: 123px;
+    margin: 0;
+    margin-bottom: 26px;
+  }
+  .card img {
+    width: 164px;
+    height: 109px;
+    border-radius: 6px;
+  }
+  .laptop-info h2 {
+    font-family: "Helvetica Neue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #2e2e2e;
+  }
+  .laptop-info p {
+    font-family: "Helvetica Neue";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 0;
+  }
+  .laptop-info a {
+    font-family: "Helvetica Neue";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  /* individual laptop */
+
+  .img-personal-info-wrapper {
+    display: flex;
+
+    justify-content: center;
+    flex-direction: column;
+  }
+  .laptop-info-cpu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .laptop-condition-fee {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .laptop-name-ram-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .cpu-info-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .purchase-date-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  p {
+    font-size: 16px;
+  }
 }

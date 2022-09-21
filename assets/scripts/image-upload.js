@@ -78,9 +78,3 @@ pictureInput.addEventListener("change", function () {
 
 const laptopInfoForm = document.getElementById("laptop-info-form");
 const laptopImg = document.getElementById("image-upload-input");
-
-fetch("https://pcfy.redberryinternship.ge/api/laptops?token=97d91ceeac715289ad07f7f2e3f16e23")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-  });

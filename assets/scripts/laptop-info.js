@@ -188,11 +188,10 @@ document.getElementById("submitButton").addEventListener("click", (e) => {
 
   let emplyoyeeInfo = JSON.parse(localStorage.getItem("employee-info"));
   let laptopImg = localStorage.getItem("laptop-image");
-  let laptopInfo = JSON.parse(localStorage.getItem("laptop-info"));
 
-  const blob = new Blob([JSON.stringify(laptopImg, null, 2)], { type: "image/jpeg" });
   let image = document.getElementById("image-upload-input");
 
+  let formData = new FormData();
   if (validateInputs()) {
     setTimeout(() => {
       //creating string values for condition radio Btn and laptop state
@@ -217,29 +216,29 @@ document.getElementById("submitButton").addEventListener("click", (e) => {
           laptop_price: laptopPriceElement.value,
         })
       );
-    }, 1000);
+      let laptopInfo = JSON.parse(localStorage.getItem("laptop-info"));
+      formData.append("name", emplyoyeeInfo.name);
+      formData.append("surname", emplyoyeeInfo.surname);
+      formData.append("team_id", emplyoyeeInfo.team_id);
+      formData.append("position_id", emplyoyeeInfo.position_id);
+      formData.append("phone_number", emplyoyeeInfo.phone_number);
+      formData.append("email", emplyoyeeInfo.email);
+      formData.append("token", emplyoyeeInfo.token);
+      formData.append("laptop_name", laptopInfo.laptop_name);
+      formData.append("laptop_image", image.files[0]);
+      formData.append("laptop_brand_id", laptopInfo.laptop_brand_id);
+      formData.append("laptop_cpu", laptopInfo.laptop_cpu);
+      formData.append("laptop_cpu_cores", laptopInfo.laptop_cpu_cores);
+      formData.append("laptop_cpu_threads", laptopInfo.laptop_cpu_threads);
+      formData.append("laptop_ram", laptopInfo.laptop_ram);
+      formData.append("laptop_hard_drive_type", laptopInfo.laptop_hard_drive_type);
+      formData.append("laptop_state", laptopInfo.laptop_state);
+      formData.append("laptop_purchase_date", laptopInfo.laptop_purchase_date);
+      formData.append("laptop_price", laptopInfo.laptop_price);
+    }, 2000);
 
     // "SENDING INFO TO SERVER LOGIC"
 
-    let formData = new FormData();
-    formData.append("name", emplyoyeeInfo.name);
-    formData.append("surname", emplyoyeeInfo.surname);
-    formData.append("team_id", emplyoyeeInfo.team_id);
-    formData.append("position_id", emplyoyeeInfo.position_id);
-    formData.append("phone_number", emplyoyeeInfo.phone_number);
-    formData.append("email", emplyoyeeInfo.email);
-    formData.append("token", emplyoyeeInfo.token);
-    formData.append("laptop_name", laptopInfo.laptop_name);
-    formData.append("laptop_image", image.files[0]);
-    formData.append("laptop_brand_id", laptopInfo.laptop_brand_id);
-    formData.append("laptop_cpu", laptopInfo.laptop_cpu);
-    formData.append("laptop_cpu_cores", laptopInfo.laptop_cpu_cores);
-    formData.append("laptop_cpu_threads", laptopInfo.laptop_cpu_threads);
-    formData.append("laptop_ram", laptopInfo.laptop_ram);
-    formData.append("laptop_hard_drive_type", laptopInfo.laptop_hard_drive_type);
-    formData.append("laptop_state", laptopInfo.laptop_state);
-    formData.append("laptop_purchase_date", laptopInfo.laptop_purchase_date);
-    formData.append("laptop_price", laptopInfo.laptop_price);
     setTimeout(() => {
       fetch("https://pcfy.redberryinternship.ge/api/laptop/create", {
         method: "POST",
@@ -249,6 +248,7 @@ document.getElementById("submitButton").addEventListener("click", (e) => {
           console.log(response.json());
           if (response.status <= 299) {
             document.getElementById("popup-wrapper").classList.add("display");
+            localStorage.clear();
           }
         })
         .catch((error) => {
@@ -256,4 +256,8 @@ document.getElementById("submitButton").addEventListener("click", (e) => {
         });
     }, 3000);
   }
+});
+
+document.getElementById("popup-laptop-list-btn").addEventListener("click", () => {
+  window.location.href = "./laptop-list.html";
 });

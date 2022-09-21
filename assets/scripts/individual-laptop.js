@@ -51,10 +51,10 @@ fetch(
                   laptopConditionInGeorgian = "ახალი";
                 }
 
-                if (laptopData.purchase_data == null) {
+                if (laptopData.laptop_purchase_date === null) {
                   purchaseData = " ";
                 } else {
-                  laptopData = laptopData.purchase_data;
+                  purchaseData = laptopData.laptop_purchase_date;
                 }
 
                 laptopForm.innerHTML += `
@@ -129,7 +129,7 @@ fetch(
             </div>
             <div class="price-condition-values">
                 <p>${laptopConditionInGeorgian}</p>
-                <p>${laptopData.price}</p>
+                <p>${laptopData.price} ₾</p>
             </div>
         </div>
         <div class="purchase-date-wrapper">

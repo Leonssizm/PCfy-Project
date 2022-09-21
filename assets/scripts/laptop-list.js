@@ -25,10 +25,3 @@ fetch("https://pcfy.redberryinternship.ge/api/laptops?token=1577d148fddc21da5ab7
       `;
     });
   });
-
-// fetch("https://pcfy.redberryinternship.ge/api/laptops?token=1577d148fddc21da5ab7053a98fe95f5")
-//   .then((response) => response.blob())
-//   .then((data) => {
-//     const imageObject = URL.createObjectURL(data);
-//     console.log(imageObject);
-//   });
